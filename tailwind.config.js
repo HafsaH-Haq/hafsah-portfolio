@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,20 +9,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: "#F6F1E8",
-        paperDark: "#ECE5D8",
+        paper: "var(--color-paper)",
+        paperDark: "var(--color-paper-dark)",
 
-        forest: "#2F4F46",
-        forestLight: "#527064",
+        card: "var(--color-card)",
+        surface: "var(--color-surface)",
 
-        ink: "#1C1B1A",
-        inkSoft: "#555555",
+        forest: "var(--color-forest)",
+        forestLight: "var(--color-forest-light)",
 
-        brass: "#B58B42",
+        ink: "var(--color-ink)",
+        inkSoft: "var(--color-ink-soft)",
 
-        stamp: "#7D5A50",
+        brass: "var(--color-brass)",
+        stamp: "var(--color-stamp)",
+        border: "var(--color-border)",
 
-        border: "#D8CFBF",
+        // Added dynamic theme-aware variables for the frozen blue ice accent system
+        primary: "var(--primary)",
+        "primary-hover": "var(--primary-hover)",
+        accent: "var(--accent)",
+        "bg-main": "var(--bg-main)",
+        "card-bg": "var(--card-bg)",
+        "custom-border": "var(--border-color)",
       },
 
       fontFamily: {
@@ -36,6 +46,5 @@ export default {
       },
     },
   },
-
   plugins: [],
 }

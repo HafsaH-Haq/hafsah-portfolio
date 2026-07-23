@@ -10,6 +10,8 @@ import Game from "./components/sections/Game";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollProgress from "./components/ScrollProgress";
 import BackToTop from "./components/BackToTop";
+import ThemeToggle from "./components/ui/ThemeToggle";
+import Certificate from "./components/sections/Certificate";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +32,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Certificate />
         <Game />
         <Contact />
         <BackToTop />

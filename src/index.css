@@ -4,42 +4,99 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior:smooth;
+/* ============ THEME TOKENS ============ */
+/* Light (default) */
+:root {
+  --color-paper: #F8F4EC;
+  --color-paper-dark: #ECE5D8;
+
+  --color-card: #F7F2E9;
+  --color-surface: #FFFFFF;
+
+  --color-forest: #2F4F46;
+  --color-forest-light: #527064;
+
+  --color-ink: #1C1B1A;
+  --color-ink-soft: #555555;
+
+  --color-brass: #B58B42;
+  --color-stamp: #7D5A50;
+  --color-border: #D8CFBF;
+
+  /* Dynamic Theme Accents (Light Mode: Emerald/Forest Theme) */
+  --primary: #2F4F46;
+  --primary-hover: #234039;
+  --accent: #B58B42;
+  --bg-main: #F8F4EC;
+  --card-bg: #F7F2E9;
+  --border-color: #D8CFBF;
+
+  color-scheme: light;
 }
 
-body{
+/* Dark (Luxury Futuristic Interface with Frozen Ice Blue #00bcd4) */
+.dark {
+  --color-paper: #121212;
+  --color-paper-dark: #1A1D1F;
 
-    margin:0;
+  --color-card: #1E1E1E;
+  --color-surface: #24272A;
 
-    background:#F6F1E8;
+  /* Replaced harsh greens with crisp, modern icy tones for dark mode */
+  --color-forest: #00bcd4;
+  --color-forest-light: #38bdf8;
 
-    color:#1C1B1A;
+  --color-ink: #F1EEE6;
+  --color-ink-soft: #ABA79D;
 
-    font-family:"Inter",sans-serif;
+  --color-brass: #D9A65C;
+  --color-stamp: #C48A6F;
+  --color-border: #2D2D2D;
 
-    overflow-x:hidden;
+  /* Dynamic Theme Accents (Dark Mode: Frozen Ice Blue #00bcd4) */
+  --primary: #00bcd4;
+  --primary-hover: #008ba3;
+  --accent: #D9A65C;
+  --bg-main: #121212;
+  --card-bg: #1E1E1E;
+  --border-color: #2D2D2D;
+
+  color-scheme: dark;
 }
 
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-::selection{
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    background:#2F4F46;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    color:white;
+::selection {
+  background: var(--color-forest);
+  color: var(--color-paper);
 }
 
 .case-image {
   filter: grayscale(100%) sepia(30%) contrast(90%);
   opacity: 0.9;
+}
+
+.dark .case-image {
+  filter: grayscale(100%) sepia(15%) contrast(95%) brightness(0.85);
+  opacity: 0.85;
 }
 
 /* Detective Doodle Background */
@@ -65,21 +122,12 @@ body{
   z-index: 0;
 }
 
+.dark .doodle-bg::before {
+  opacity: 0.05;
+  filter: invert(1);
+}
+
 .doodle-content {
   position: relative;
   z-index: 1;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-overflow-x:hidden;
-background:#F8F4EC;
-}
-
-::selection{
-background:#2F4F46;
-color:white;
 }
